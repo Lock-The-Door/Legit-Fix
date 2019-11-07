@@ -113,7 +113,7 @@
             this.p_progress.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
-
+            this.Load += new System.EventHandler(this.f_fixing_Open);
         }
 
         #endregion

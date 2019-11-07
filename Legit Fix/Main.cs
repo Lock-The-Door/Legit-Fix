@@ -65,7 +65,6 @@ namespace Legit_Fix
 
         private void UpdateElapsedTime(object sender, EventArgs e)
         {
-            Console.WriteLine(Math.Floor(4.99));
             if (!done)
             {
                 TimeSpan elapsedTime = DateTime.Now.Subtract(startDateTime);

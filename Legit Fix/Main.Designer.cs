@@ -39,7 +39,7 @@
             this.l_info = new System.Windows.Forms.Label();
             this.tmr_reset = new System.Windows.Forms.Timer(this.components);
             this.l_disclaimer = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.l_version = new System.Windows.Forms.Label();
             this.tmr_updateElapsedTime = new System.Windows.Forms.Timer(this.components);
             this.p_problemsSolved.SuspendLayout();
             this.SuspendLayout();
@@ -135,28 +135,33 @@
             this.l_disclaimer.TabIndex = 6;
             this.l_disclaimer.Text = resources.GetString("l_disclaimer.Text");
             // 
-            // label1
+            // l_version
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(636, 333);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Version Beta 1.0";
+            this.l_version.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.l_version.AutoSize = true;
+            this.l_version.Location = new System.Drawing.Point(636, 333);
+            this.l_version.Name = "l_version";
+            this.l_version.Size = new System.Drawing.Size(85, 13);
+            this.l_version.TabIndex = 7;
+            this.l_version.Text = "Version Beta 1.0";
             // 
             // f_main
             // 
+            this.AcceptButton = this.b_start;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(726, 351);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.l_version);
             this.Controls.Add(this.l_disclaimer);
             this.Controls.Add(this.l_info);
             this.Controls.Add(this.b_start);
             this.Controls.Add(this.p_problemsSolved);
             this.Controls.Add(this.l_desc);
             this.Controls.Add(this.l_Title);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(742, 390);
+            this.MinimumSize = new System.Drawing.Size(742, 390);
             this.Name = "f_main";
             this.Text = "Legit Fix - Welcome";
             this.p_problemsSolved.ResumeLayout(false);
@@ -176,7 +181,7 @@
         private System.Windows.Forms.Label l_info;
         private System.Windows.Forms.Timer tmr_reset;
         private System.Windows.Forms.Label l_disclaimer;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label l_version;
         private System.Windows.Forms.Timer tmr_updateElapsedTime;
     }
 }
