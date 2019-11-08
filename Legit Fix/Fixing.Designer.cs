@@ -36,6 +36,8 @@
             this.l_desc = new System.Windows.Forms.Label();
             this.b_cancel = new System.Windows.Forms.Button();
             this.tmr_timer = new System.Windows.Forms.Timer(this.components);
+            this.l_timeElapsed = new System.Windows.Forms.Label();
+            this.tmr_updateElapsedTime = new System.Windows.Forms.Timer(this.components);
             this.p_progress.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,11 +100,26 @@
             this.b_cancel.UseVisualStyleBackColor = true;
             this.b_cancel.Click += new System.EventHandler(this.b_cancel_Click);
             // 
+            // l_timeElapsed
+            // 
+            this.l_timeElapsed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.l_timeElapsed.AutoSize = true;
+            this.l_timeElapsed.Location = new System.Drawing.Point(9, 142);
+            this.l_timeElapsed.Name = "l_timeElapsed";
+            this.l_timeElapsed.Size = new System.Drawing.Size(119, 13);
+            this.l_timeElapsed.TabIndex = 5;
+            this.l_timeElapsed.Text = "Time Elapsed: 00:00:00";
+            // 
+            // tmr_updateElapsedTime
+            // 
+            this.tmr_updateElapsedTime.Tick += new System.EventHandler(this.tmr_updateElapsedTime_Tick);
+            // 
             // f_fixing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(549, 167);
+            this.Controls.Add(this.l_timeElapsed);
             this.Controls.Add(this.b_cancel);
             this.Controls.Add(this.l_desc);
             this.Controls.Add(this.l_title);
@@ -110,10 +127,11 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "f_fixing";
             this.Text = "Legit Fix - Fixing Problems";
+            this.Load += new System.EventHandler(this.f_fixing_Open);
             this.p_progress.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
-            this.Load += new System.EventHandler(this.f_fixing_Open);
+
         }
 
         #endregion
@@ -125,5 +143,7 @@
         private System.Windows.Forms.Label l_desc;
         private System.Windows.Forms.Button b_cancel;
         private System.Windows.Forms.Timer tmr_timer;
+        private System.Windows.Forms.Label l_timeElapsed;
+        private System.Windows.Forms.Timer tmr_updateElapsedTime;
     }
 }

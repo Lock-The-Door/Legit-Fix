@@ -22,6 +22,7 @@ namespace Legit_Fix
         private int stopped = 0;
         private string[] args;
         private string arg = "";
+        public string hours, minutes, seconds;
 
         public f_fixing()
         {
@@ -29,18 +30,25 @@ namespace Legit_Fix
             tmr_timer.Tick += new EventHandler(doStuff);
             Update();
             tmr_timer.Interval = 3000;
-
         }
 
         private void f_fixing_Open(object sender, EventArgs e)
         {
             tmr_timer.Start();
+            tmr_updateElapsedTime.Start();
         }
 
         private void doStuff(object sender, EventArgs e)
         {
             tmr_timer.Stop();
             Random value = new Random();
+            if (pb_progress.Value == 100)
+            {
+                pb_progress.Value = 0;
+                l_percent.ResetText();
+                Update();
+            }
+            
             switch (stops)
             {
                 case 0:
@@ -62,7 +70,7 @@ namespace Legit_Fix
                         System.Diagnostics.Process.Start(@"Terminating_Console.exe", arg);
                     }
                     int newValue = pb_progress.Value + value.Next(0, 10);
-                    if (newValue >= 100) { newValue = 100; stops++; stops = stopped; pb_progress.Value = 0; l_percent.ResetText(); }
+                    if (newValue >= 100) { newValue = 100; stops++; stops = stopped; }
                     pb_progress.Value = newValue;
                     l_percent.Text = newValue + "%";
                     tmr_timer.Interval = value.Next(minMS, maxMS);
@@ -98,6 +106,12 @@ namespace Legit_Fix
         private void b_cancel_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void tmr_updateElapsedTime_Tick(object sender, EventArgs e)
+        {
+            
+            l_timeElapsed.Text = "Time Elapsed: " + hours + ":" + minutes + ":" + seconds;
         }
     }
 }
