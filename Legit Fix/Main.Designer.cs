@@ -32,16 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f_main));
             this.l_Title = new System.Windows.Forms.Label();
             this.l_desc = new System.Windows.Forms.Label();
-            this.l_problemsSolvedDesc = new System.Windows.Forms.Label();
-            this.p_problemsSolved = new System.Windows.Forms.Panel();
-            this.l_problemsSolvedInt = new System.Windows.Forms.Label();
             this.b_start = new System.Windows.Forms.Button();
             this.l_info = new System.Windows.Forms.Label();
             this.tmr_reset = new System.Windows.Forms.Timer(this.components);
             this.l_disclaimer = new System.Windows.Forms.Label();
             this.l_version = new System.Windows.Forms.Label();
             this.tmr_updateElapsedTime = new System.Windows.Forms.Timer(this.components);
-            this.p_problemsSolved.SuspendLayout();
             this.SuspendLayout();
             // 
             // l_Title
@@ -65,40 +61,6 @@
             this.l_desc.TabIndex = 1;
             this.l_desc.Text = "The fixing tool to solve all your problems!";
             this.l_desc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // l_problemsSolvedDesc
-            // 
-            this.l_problemsSolvedDesc.Dock = System.Windows.Forms.DockStyle.Left;
-            this.l_problemsSolvedDesc.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l_problemsSolvedDesc.Location = new System.Drawing.Point(0, 0);
-            this.l_problemsSolvedDesc.Name = "l_problemsSolvedDesc";
-            this.l_problemsSolvedDesc.Size = new System.Drawing.Size(146, 28);
-            this.l_problemsSolvedDesc.TabIndex = 2;
-            this.l_problemsSolvedDesc.Text = "Problems Solved: ";
-            this.l_problemsSolvedDesc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.l_problemsSolvedDesc.Visible = false;
-            // 
-            // p_problemsSolved
-            // 
-            this.p_problemsSolved.Controls.Add(this.l_problemsSolvedInt);
-            this.p_problemsSolved.Controls.Add(this.l_problemsSolvedDesc);
-            this.p_problemsSolved.Location = new System.Drawing.Point(14, 160);
-            this.p_problemsSolved.Name = "p_problemsSolved";
-            this.p_problemsSolved.Size = new System.Drawing.Size(200, 28);
-            this.p_problemsSolved.TabIndex = 3;
-            this.p_problemsSolved.Visible = false;
-            // 
-            // l_problemsSolvedInt
-            // 
-            this.l_problemsSolvedInt.Dock = System.Windows.Forms.DockStyle.Right;
-            this.l_problemsSolvedInt.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l_problemsSolvedInt.Location = new System.Drawing.Point(128, 0);
-            this.l_problemsSolvedInt.Name = "l_problemsSolvedInt";
-            this.l_problemsSolvedInt.Size = new System.Drawing.Size(72, 28);
-            this.l_problemsSolvedInt.TabIndex = 3;
-            this.l_problemsSolvedInt.Text = "Loading...";
-            this.l_problemsSolvedInt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.l_problemsSolvedInt.Visible = false;
             // 
             // b_start
             // 
@@ -155,7 +117,6 @@
             this.Controls.Add(this.l_disclaimer);
             this.Controls.Add(this.l_info);
             this.Controls.Add(this.b_start);
-            this.Controls.Add(this.p_problemsSolved);
             this.Controls.Add(this.l_desc);
             this.Controls.Add(this.l_Title);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -164,7 +125,6 @@
             this.MinimumSize = new System.Drawing.Size(742, 390);
             this.Name = "f_main";
             this.Text = "Legit Fix - Welcome";
-            this.p_problemsSolved.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,9 +134,6 @@
 
         private System.Windows.Forms.Label l_Title;
         private System.Windows.Forms.Label l_desc;
-        private System.Windows.Forms.Label l_problemsSolvedDesc;
-        private System.Windows.Forms.Panel p_problemsSolved;
-        private System.Windows.Forms.Label l_problemsSolvedInt;
         private System.Windows.Forms.Button b_start;
         private System.Windows.Forms.Label l_info;
         private System.Windows.Forms.Timer tmr_reset;
